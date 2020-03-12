@@ -20,4 +20,4 @@ clean:
 	rm ./vertex *.o
 
 run:
-	./vertex
+	./vertex 
