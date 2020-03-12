@@ -6,15 +6,22 @@
 typedef struct vertex {
   bool state;
   int value;
+  struct vertex* next;
 
 } vertex;
 
-vertex* new_vertex();
+typedef struct graph {
+  int num_vertices;
+  struct vertex** adj_lists;
+} graph;
+
+
+vertex* new_vertex(int n);
 void free_vertex(vertex* gr);
-void create(vertex* gr, bool state, int value);
-void delete(vertex* gr);
-void dfs_visit();
-void dfs(vertex* gr);
+
+graph* new_graph(int vertices);
+void printGraph(graph* graph);
+void add_edge(graph* gr, int src, int dest);
 
 
 #endif
